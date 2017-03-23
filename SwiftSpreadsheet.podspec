@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftSpreadsheet'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of SwiftSpreadsheet.'
+  s.version          = '1.0.0'
+  s.summary          = 'A spreadsheet CollectionViewLayout in Swift.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Reference to the demo application. More information coming soon.
                        DESC
 
-  s.homepage         = 'https://github.com/Wojtek Kordylewski/SwiftSpreadsheet'
+  s.homepage         = 'https://github.com/stuffrabbit/SwiftSpreadsheet'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Wojtek Kordylewski' => 'wk@mome-app.com' }
-  s.source           = { :git => 'https://github.com/Wojtek Kordylewski/SwiftSpreadsheet.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/stuffrabbit/SwiftSpreadsheet.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

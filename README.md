@@ -22,7 +22,7 @@ pod "SwiftSpreadsheet"
 
 ## Author
 
-Wojtek Kordylewski, wk@mome-app.com
+Wojtek Kordylewski, indiControl GmbH
 
 ## License
 
