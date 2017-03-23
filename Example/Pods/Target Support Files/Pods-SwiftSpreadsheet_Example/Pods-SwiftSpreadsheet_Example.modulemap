@@ -1,0 +1,6 @@
+framework module Pods_SwiftSpreadsheet_Example {
+  umbrella header "Pods-SwiftSpreadsheet_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

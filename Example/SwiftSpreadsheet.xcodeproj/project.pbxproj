@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E4015C41E84638200B66042 /* SpreadsheetTopRightDecorationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4015C01E84638200B66042 /* SpreadsheetTopRightDecorationView.xib */; };
+		2E4015C51E84638200B66042 /* SpreadsheetBottomLeftDecorationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4015C11E84638200B66042 /* SpreadsheetBottomLeftDecorationView.xib */; };
+		2E4015C61E84638200B66042 /* SpreadsheetBottomRightDecorationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4015C21E84638200B66042 /* SpreadsheetBottomRightDecorationView.xib */; };
+		2E4015C71E84638200B66042 /* SpreadsheetTopLeftDecorationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4015C31E84638200B66042 /* SpreadsheetTopLeftDecorationView.xib */; };
+		2E4015CC1E84638F00B66042 /* SpreadsheetLeftRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4015C81E84638F00B66042 /* SpreadsheetLeftRowView.xib */; };
+		2E4015CD1E84638F00B66042 /* SpreadsheetRightRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4015C91E84638F00B66042 /* SpreadsheetRightRowView.xib */; };
+		2E4015CE1E84638F00B66042 /* SpreadsheetTopColumnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4015CA1E84638F00B66042 /* SpreadsheetTopColumnView.xib */; };
+		2E4015CF1E84638F00B66042 /* SpreadsheetBottomColumnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4015CB1E84638F00B66042 /* SpreadsheetBottomColumnView.xib */; };
 		442D764A94B9DCEF792DF2D2 /* Pods_SwiftSpreadsheet_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F827BB05B57228E2309B65CE /* Pods_SwiftSpreadsheet_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -30,8 +38,16 @@
 /* Begin PBXFileReference section */
 		05EB07F7913E6773879A58BB /* Pods-SwiftSpreadsheet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSpreadsheet_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSpreadsheet_Tests/Pods-SwiftSpreadsheet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1549AC9FD6E372C880FB0240 /* Pods-SwiftSpreadsheet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSpreadsheet_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSpreadsheet_Example/Pods-SwiftSpreadsheet_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		25A4DD36B684F6C1E073250D /* SwiftSpreadsheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SwiftSpreadsheet.podspec; path = ../SwiftSpreadsheet.podspec; sourceTree = "<group>"; };
-		38D7D49BF4243D0ACD81E773 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		25A4DD36B684F6C1E073250D /* SwiftSpreadsheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftSpreadsheet.podspec; path = ../SwiftSpreadsheet.podspec; sourceTree = "<group>"; };
+		2E4015C01E84638200B66042 /* SpreadsheetTopRightDecorationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadsheetTopRightDecorationView.xib; sourceTree = "<group>"; };
+		2E4015C11E84638200B66042 /* SpreadsheetBottomLeftDecorationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadsheetBottomLeftDecorationView.xib; sourceTree = "<group>"; };
+		2E4015C21E84638200B66042 /* SpreadsheetBottomRightDecorationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadsheetBottomRightDecorationView.xib; sourceTree = "<group>"; };
+		2E4015C31E84638200B66042 /* SpreadsheetTopLeftDecorationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadsheetTopLeftDecorationView.xib; sourceTree = "<group>"; };
+		2E4015C81E84638F00B66042 /* SpreadsheetLeftRowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadsheetLeftRowView.xib; sourceTree = "<group>"; };
+		2E4015C91E84638F00B66042 /* SpreadsheetRightRowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadsheetRightRowView.xib; sourceTree = "<group>"; };
+		2E4015CA1E84638F00B66042 /* SpreadsheetTopColumnView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadsheetTopColumnView.xib; sourceTree = "<group>"; };
+		2E4015CB1E84638F00B66042 /* SpreadsheetBottomColumnView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadsheetBottomColumnView.xib; sourceTree = "<group>"; };
+		38D7D49BF4243D0ACD81E773 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SwiftSpreadsheet_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSpreadsheet_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +59,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		97B1CC2699D92FDCCD6DD999 /* Pods-SwiftSpreadsheet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSpreadsheet_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSpreadsheet_Tests/Pods-SwiftSpreadsheet_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B35989E19AE2B4C81C71F35A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B35989E19AE2B4C81C71F35A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CA743D276279FFF270C43FE6 /* Pods-SwiftSpreadsheet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSpreadsheet_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSpreadsheet_Example/Pods-SwiftSpreadsheet_Example.release.xcconfig"; sourceTree = "<group>"; };
 		ED94D7DF88EA82B1A51C946C /* Pods_SwiftSpreadsheet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSpreadsheet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F827BB05B57228E2309B65CE /* Pods_SwiftSpreadsheet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSpreadsheet_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +105,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2E4015D01E84639300B66042 /* DecorationViews */ = {
+			isa = PBXGroup;
+			children = (
+				2E4015C01E84638200B66042 /* SpreadsheetTopRightDecorationView.xib */,
+				2E4015C11E84638200B66042 /* SpreadsheetBottomLeftDecorationView.xib */,
+				2E4015C21E84638200B66042 /* SpreadsheetBottomRightDecorationView.xib */,
+				2E4015C31E84638200B66042 /* SpreadsheetTopLeftDecorationView.xib */,
+			);
+			name = DecorationViews;
+			sourceTree = "<group>";
+		};
+		2E4015D11E84639F00B66042 /* SupplementaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				2E4015C81E84638F00B66042 /* SpreadsheetLeftRowView.xib */,
+				2E4015C91E84638F00B66042 /* SpreadsheetRightRowView.xib */,
+				2E4015CA1E84638F00B66042 /* SpreadsheetTopColumnView.xib */,
+				2E4015CB1E84638F00B66042 /* SpreadsheetBottomColumnView.xib */,
+			);
+			name = SupplementaryViews;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +151,8 @@
 		607FACD21AFB9204008FA782 /* Example for SwiftSpreadsheet */ = {
 			isa = PBXGroup;
 			children = (
+				2E4015D11E84639F00B66042 /* SupplementaryViews */,
+				2E4015D01E84639300B66042 /* DecorationViews */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -249,8 +289,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				2E4015CC1E84638F00B66042 /* SpreadsheetLeftRowView.xib in Resources */,
+				2E4015C51E84638200B66042 /* SpreadsheetBottomLeftDecorationView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				2E4015C41E84638200B66042 /* SpreadsheetTopRightDecorationView.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				2E4015CF1E84638F00B66042 /* SpreadsheetBottomColumnView.xib in Resources */,
+				2E4015CD1E84638F00B66042 /* SpreadsheetRightRowView.xib in Resources */,
+				2E4015C61E84638200B66042 /* SpreadsheetBottomRightDecorationView.xib in Resources */,
+				2E4015C71E84638200B66042 /* SpreadsheetTopLeftDecorationView.xib in Resources */,
+				2E4015CE1E84638F00B66042 /* SpreadsheetTopColumnView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

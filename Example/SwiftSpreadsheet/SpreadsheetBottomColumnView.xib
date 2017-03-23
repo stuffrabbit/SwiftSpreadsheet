@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hu0-67-aPt" customClass="SpreadsheetCollectionReusableView" customModule="swift_spreadsheet_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hodor" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWk-Te-GlZ">
+                    <rect key="frame" x="4" y="18" width="312" height="14"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECQ-ny-ZRz">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Kj8-33-cqz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ECQ-ny-ZRz" secondAttribute="trailing" id="0Kv-Uz-E6X"/>
+                <constraint firstItem="ECQ-ny-ZRz" firstAttribute="top" secondItem="hu0-67-aPt" secondAttribute="top" id="3G5-RA-vt6"/>
+                <constraint firstItem="ECQ-ny-ZRz" firstAttribute="leading" secondItem="hu0-67-aPt" secondAttribute="leading" id="7wW-de-JjE"/>
+                <constraint firstAttribute="bottom" secondItem="aWk-Te-GlZ" secondAttribute="bottom" constant="10" id="BQD-wB-s3h"/>
+                <constraint firstItem="aWk-Te-GlZ" firstAttribute="centerY" secondItem="hu0-67-aPt" secondAttribute="centerY" id="DcB-0B-YDM"/>
+                <constraint firstItem="aWk-Te-GlZ" firstAttribute="centerY" secondItem="hu0-67-aPt" secondAttribute="centerY" id="ED5-EF-vDc"/>
+                <constraint firstAttribute="bottom" secondItem="ECQ-ny-ZRz" secondAttribute="bottom" id="LDv-We-Thr"/>
+                <constraint firstAttribute="trailing" secondItem="aWk-Te-GlZ" secondAttribute="trailing" constant="5" id="aQW-Zb-hQU"/>
+                <constraint firstAttribute="trailing" secondItem="aWk-Te-GlZ" secondAttribute="trailing" constant="4" id="ao0-Xm-3X9"/>
+                <constraint firstItem="aWk-Te-GlZ" firstAttribute="centerX" secondItem="hu0-67-aPt" secondAttribute="centerX" id="d9U-jO-2so"/>
+                <constraint firstItem="aWk-Te-GlZ" firstAttribute="leading" secondItem="hu0-67-aPt" secondAttribute="leading" constant="4" id="jQS-5S-K9Q"/>
+                <constraint firstItem="aWk-Te-GlZ" firstAttribute="leading" secondItem="hu0-67-aPt" secondAttribute="leading" constant="5" id="p57-Mq-LrK"/>
+                <constraint firstItem="aWk-Te-GlZ" firstAttribute="centerX" secondItem="hu0-67-aPt" secondAttribute="centerX" id="ywn-Tg-teK"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="LDv-We-Thr"/>
+                    <exclude reference="BQD-wB-s3h"/>
+                    <exclude reference="DcB-0B-YDM"/>
+                    <exclude reference="aQW-Zb-hQU"/>
+                    <exclude reference="d9U-jO-2so"/>
+                    <exclude reference="p57-Mq-LrK"/>
+                    <exclude reference="ywn-Tg-teK"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="infoLabel" destination="aWk-Te-GlZ" id="u2m-IK-Ltj"/>
+            </connections>
+            <point key="canvasLocation" x="537" y="534"/>
+        </collectionReusableView>
+    </objects>
+</document>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1uJ-ZE-J4g" customClass="SpreadsheetCollectionReusableView" customModule="swift_spreadsheet_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nK5-Wz-zeY">
+                    <rect key="frame" x="5" y="5" width="310" height="40"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMF-T5-yfJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="U8v-d0-ZOB"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGb-eJ-6iy">
+                    <rect key="frame" x="319" y="0.0" width="1" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="O9U-S3-dQu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="jGb-eJ-6iy" secondAttribute="bottom" id="0WV-DF-uYL"/>
+                <constraint firstItem="nK5-Wz-zeY" firstAttribute="centerX" secondItem="1uJ-ZE-J4g" secondAttribute="centerX" id="3yU-Gj-8jJ"/>
+                <constraint firstItem="nK5-Wz-zeY" firstAttribute="centerY" secondItem="1uJ-ZE-J4g" secondAttribute="centerY" id="F85-uR-zsk"/>
+                <constraint firstItem="nK5-Wz-zeY" firstAttribute="leading" secondItem="1uJ-ZE-J4g" secondAttribute="leading" constant="5" id="K45-zc-Dh7"/>
+                <constraint firstItem="jGb-eJ-6iy" firstAttribute="top" secondItem="1uJ-ZE-J4g" secondAttribute="top" id="Y0A-Gg-U5R"/>
+                <constraint firstItem="UMF-T5-yfJ" firstAttribute="top" secondItem="1uJ-ZE-J4g" secondAttribute="top" id="Z72-Fi-QWg"/>
+                <constraint firstAttribute="trailing" secondItem="nK5-Wz-zeY" secondAttribute="trailing" constant="5" id="eKc-T8-m58"/>
+                <constraint firstAttribute="bottom" secondItem="nK5-Wz-zeY" secondAttribute="bottom" constant="5" id="jcW-mP-Ejh"/>
+                <constraint firstItem="UMF-T5-yfJ" firstAttribute="leading" secondItem="1uJ-ZE-J4g" secondAttribute="leading" id="mr6-vG-Sp3"/>
+                <constraint firstItem="nK5-Wz-zeY" firstAttribute="top" secondItem="1uJ-ZE-J4g" secondAttribute="top" constant="5" id="u8P-Rg-gzY"/>
+                <constraint firstAttribute="trailing" secondItem="UMF-T5-yfJ" secondAttribute="trailing" id="zB4-7d-mfT"/>
+                <constraint firstAttribute="trailing" secondItem="jGb-eJ-6iy" secondAttribute="trailing" id="zeb-n9-45g"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="3yU-Gj-8jJ"/>
+                    <exclude reference="F85-uR-zsk"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="infoLabel" destination="nK5-Wz-zeY" id="eLq-1P-qio"/>
+            </connections>
+            <point key="canvasLocation" x="537" y="534"/>
+        </collectionReusableView>
+    </objects>
+</document>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tvk-kq-RyS" customClass="SpreadsheetCollectionReusableView" customModule="swift_spreadsheet_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygv-wj-q7L">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="2ah-ME-Po2"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cH-IR-XEO">
+                    <rect key="frame" x="0.0" y="0.0" width="1" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="v3w-Te-DmJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1cH-IR-XEO" firstAttribute="leading" secondItem="tvk-kq-RyS" secondAttribute="leading" id="6m3-FV-MIp"/>
+                <constraint firstItem="1cH-IR-XEO" firstAttribute="top" secondItem="tvk-kq-RyS" secondAttribute="top" id="GJa-ds-Ze2"/>
+                <constraint firstItem="ygv-wj-q7L" firstAttribute="leading" secondItem="tvk-kq-RyS" secondAttribute="leading" id="QPF-5I-P1g"/>
+                <constraint firstAttribute="trailing" secondItem="ygv-wj-q7L" secondAttribute="trailing" id="QgA-ho-w7g"/>
+                <constraint firstItem="ygv-wj-q7L" firstAttribute="top" secondItem="tvk-kq-RyS" secondAttribute="top" id="jwX-nr-rrV"/>
+                <constraint firstAttribute="bottom" secondItem="1cH-IR-XEO" secondAttribute="bottom" id="r8b-RG-6Cy"/>
+            </constraints>
+            <point key="canvasLocation" x="537" y="534"/>
+        </collectionReusableView>
+    </objects>
+</document>

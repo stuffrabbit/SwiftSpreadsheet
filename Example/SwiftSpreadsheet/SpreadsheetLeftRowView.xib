@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hKv-KO-COi" customClass="SpreadsheetCollectionReusableView" customModule="swift_spreadsheet_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIe-9Q-DfE">
+                    <rect key="frame" x="5" y="5" width="310" height="40"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtd-2f-HzS">
+                    <rect key="frame" x="319" y="0.0" width="1" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="Sl5-nk-qEW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iIe-9Q-DfE" secondAttribute="bottom" constant="5" id="0Jm-mJ-jrW"/>
+                <constraint firstItem="jtd-2f-HzS" firstAttribute="top" secondItem="hKv-KO-COi" secondAttribute="top" id="12D-00-p9n"/>
+                <constraint firstAttribute="bottom" secondItem="jtd-2f-HzS" secondAttribute="bottom" id="1kV-30-8HU"/>
+                <constraint firstItem="iIe-9Q-DfE" firstAttribute="leading" secondItem="hKv-KO-COi" secondAttribute="leading" constant="5" id="pfT-7J-Xue"/>
+                <constraint firstItem="iIe-9Q-DfE" firstAttribute="top" secondItem="hKv-KO-COi" secondAttribute="top" constant="5" id="q3U-Lu-NDO"/>
+                <constraint firstAttribute="trailing" secondItem="iIe-9Q-DfE" secondAttribute="trailing" constant="5" id="tqX-9N-5lm"/>
+                <constraint firstAttribute="trailing" secondItem="jtd-2f-HzS" secondAttribute="trailing" id="yyn-we-fSI"/>
+            </constraints>
+            <connections>
+                <outlet property="infoLabel" destination="iIe-9Q-DfE" id="FbW-Ud-36j"/>
+            </connections>
+            <point key="canvasLocation" x="537" y="534"/>
+        </collectionReusableView>
+    </objects>
+</document>

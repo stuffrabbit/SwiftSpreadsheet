@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rLX-3Z-m45" customClass="SpreadsheetCollectionReusableView" customModule="swift_spreadsheet_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD3-U1-o3D">
+                    <rect key="frame" x="5" y="5" width="310" height="40"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQX-m2-391">
+                    <rect key="frame" x="0.0" y="0.0" width="1" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="aLS-52-CH2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HD3-U1-o3D" firstAttribute="top" secondItem="rLX-3Z-m45" secondAttribute="top" constant="5" id="EST-Ll-Gid"/>
+                <constraint firstAttribute="bottom" secondItem="dQX-m2-391" secondAttribute="bottom" id="FWv-b7-Nhp"/>
+                <constraint firstAttribute="trailing" secondItem="HD3-U1-o3D" secondAttribute="trailing" constant="5" id="GhA-wQ-tOb"/>
+                <constraint firstItem="dQX-m2-391" firstAttribute="leading" secondItem="rLX-3Z-m45" secondAttribute="leading" id="M1C-i6-Fy4"/>
+                <constraint firstItem="HD3-U1-o3D" firstAttribute="leading" secondItem="rLX-3Z-m45" secondAttribute="leading" constant="5" id="Mdd-yp-eue"/>
+                <constraint firstItem="HD3-U1-o3D" firstAttribute="centerX" secondItem="rLX-3Z-m45" secondAttribute="centerX" id="dhj-V7-kWo"/>
+                <constraint firstAttribute="bottom" secondItem="HD3-U1-o3D" secondAttribute="bottom" constant="5" id="q0n-NP-XQ7"/>
+                <constraint firstItem="HD3-U1-o3D" firstAttribute="centerY" secondItem="rLX-3Z-m45" secondAttribute="centerY" id="s7d-Tq-ShN"/>
+                <constraint firstItem="dQX-m2-391" firstAttribute="top" secondItem="rLX-3Z-m45" secondAttribute="top" id="wnp-Y5-0FR"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="dhj-V7-kWo"/>
+                    <exclude reference="s7d-Tq-ShN"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="infoLabel" destination="HD3-U1-o3D" id="p6n-gQ-11l"/>
+            </connections>
+            <point key="canvasLocation" x="537" y="534"/>
+        </collectionReusableView>
+    </objects>
+</document>

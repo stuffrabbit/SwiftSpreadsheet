@@ -1,0 +1,22 @@
+{
+  "name": "SwiftSpreadsheet",
+  "version": "0.1.0",
+  "summary": "A short description of SwiftSpreadsheet.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Wojtek Kordylewski/SwiftSpreadsheet",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Wojtek Kordylewski": "wk@mome-app.com"
+  },
+  "source": {
+    "git": "https://github.com/Wojtek Kordylewski/SwiftSpreadsheet.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SwiftSpreadsheet/Classes/**/*"
+}

@@ -1,0 +1,16 @@
+PODS:
+  - SwiftSpreadsheet (0.1.0)
+
+DEPENDENCIES:
+  - SwiftSpreadsheet (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftSpreadsheet:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SwiftSpreadsheet: 859ea150a6262d3ceac033eb66b2a30e82a84436
+
+PODFILE CHECKSUM: 3dd839d4ae30b36a091801ad32fccd68d5f4f7df
+
+COCOAPODS: 1.2.0

@@ -1,0 +1,6 @@
+framework module SwiftSpreadsheet {
+  umbrella header "SwiftSpreadsheet-umbrella.h"
+
+  export *
+  module * { export * }
+}

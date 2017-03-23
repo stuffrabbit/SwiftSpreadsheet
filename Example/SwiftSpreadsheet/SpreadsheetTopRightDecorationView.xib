@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kuZ-a6-b0E" customClass="SpreadsheetCollectionReusableView" customModule="swift_spreadsheet_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LO4-7R-GhT">
+                    <rect key="frame" x="4" y="20" width="312" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="AmZ-2s-k5b"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnL-cr-ikk">
+                    <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Zec-ej-pEY"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCr-nK-cwm">
+                    <rect key="frame" x="0.0" y="0.0" width="1" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="Yaw-Ur-yfR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LO4-7R-GhT" firstAttribute="centerX" secondItem="kuZ-a6-b0E" secondAttribute="centerX" id="0El-8Z-jw5"/>
+                <constraint firstAttribute="bottom" secondItem="tnL-cr-ikk" secondAttribute="bottom" id="2MK-K5-X75"/>
+                <constraint firstAttribute="bottom" secondItem="LO4-7R-GhT" secondAttribute="bottom" constant="10" id="EPB-mR-ksl"/>
+                <constraint firstAttribute="trailing" secondItem="LO4-7R-GhT" secondAttribute="trailing" constant="5" id="HlO-RA-pF7"/>
+                <constraint firstAttribute="trailing" secondItem="LO4-7R-GhT" secondAttribute="trailing" priority="500" constant="4" id="Pio-SN-KYn"/>
+                <constraint firstItem="XCr-nK-cwm" firstAttribute="top" secondItem="kuZ-a6-b0E" secondAttribute="top" id="TLu-bm-wGq"/>
+                <constraint firstItem="XCr-nK-cwm" firstAttribute="leading" secondItem="kuZ-a6-b0E" secondAttribute="leading" id="VNI-L8-YsW"/>
+                <constraint firstItem="LO4-7R-GhT" firstAttribute="centerX" secondItem="kuZ-a6-b0E" secondAttribute="centerX" id="a9k-HC-v7a"/>
+                <constraint firstItem="LO4-7R-GhT" firstAttribute="leading" secondItem="kuZ-a6-b0E" secondAttribute="leading" constant="5" id="gFW-Uv-ccB"/>
+                <constraint firstItem="LO4-7R-GhT" firstAttribute="centerY" secondItem="kuZ-a6-b0E" secondAttribute="centerY" id="glR-al-bL5"/>
+                <constraint firstAttribute="bottom" secondItem="XCr-nK-cwm" secondAttribute="bottom" id="hS7-0c-nhL"/>
+                <constraint firstItem="tnL-cr-ikk" firstAttribute="leading" secondItem="kuZ-a6-b0E" secondAttribute="leading" id="k38-NM-OeN"/>
+                <constraint firstItem="LO4-7R-GhT" firstAttribute="leading" secondItem="kuZ-a6-b0E" secondAttribute="leading" constant="4" id="mgr-Qg-0Ch"/>
+                <constraint firstAttribute="trailing" secondItem="tnL-cr-ikk" secondAttribute="trailing" id="txo-bJ-fIk"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="0El-8Z-jw5"/>
+                    <exclude reference="HlO-RA-pF7"/>
+                    <exclude reference="a9k-HC-v7a"/>
+                    <exclude reference="gFW-Uv-ccB"/>
+                    <exclude reference="glR-al-bL5"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="infoLabel" destination="LO4-7R-GhT" id="YUL-SQ-3iU"/>
+            </connections>
+            <point key="canvasLocation" x="537" y="534"/>
+        </collectionReusableView>
+    </objects>
+</document>
