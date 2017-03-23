@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SwiftSpreadsheet_Example' do
+  pod 'SwiftSpreadsheet', :path => '../'
+
+  target 'SwiftSpreadsheet_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
