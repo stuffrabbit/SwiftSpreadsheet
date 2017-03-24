@@ -22,7 +22,8 @@ pod "SwiftSpreadsheet"
 
 ## Author
 
-Wojtek Kordylewski, indiControl GmbH
+Wojtek Kordylewski. 
+indiControl GmbH owns the Copyright of the respective SwiftSpreadsheet.swift file.
 
 ## License
 
