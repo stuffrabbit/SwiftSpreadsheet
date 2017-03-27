@@ -20,7 +20,7 @@ pod "SwiftSpreadsheet"
 ```
 ## Information
 
-![Output sample](https://gfycat.com/SilentLightheartedAmmonite.gif)
+![Output sample](https://thumbs.gfycat.com/SilentLightheartedAmmonite-size_restricted.gif)
 
 
 ## Author
