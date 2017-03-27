@@ -20,7 +20,8 @@ pod "SwiftSpreadsheet"
 ```
 ## Information
 
-<iframe src='https://gfycat.com/ifr/SilentLightheartedAmmonite' frameborder='0' scrolling='no' width='640' height='360' allowfullscreen></iframe>
+![Output sample](https://gfycat.com/SilentLightheartedAmmonite)
+
 
 ## Author
 
