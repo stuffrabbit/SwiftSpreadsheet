@@ -1,6 +1,5 @@
 # SwiftSpreadsheet
 
-[![CI Status](http://img.shields.io/travis/stuffrabbit/SwiftSpreadsheet.svg?style=flat)](https://travis-ci.org/stuffrabbit/SwiftSpreadsheet)
 [![Version](https://img.shields.io/cocoapods/v/SwiftSpreadsheet.svg?style=flat)](http://cocoapods.org/pods/SwiftSpreadsheet)
 [![License](https://img.shields.io/cocoapods/l/SwiftSpreadsheet.svg?style=flat)](http://cocoapods.org/pods/SwiftSpreadsheet)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftSpreadsheet.svg?style=flat)](http://cocoapods.org/pods/SwiftSpreadsheet)
@@ -20,6 +19,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "SwiftSpreadsheet"
 ```
+## Demo
+
+![Output sample](https://thumbs.gfycat.com/SilentLightheartedAmmonite-size_restricted.gif)
+
 
 ## Quick start
 
@@ -50,6 +53,9 @@ self.collectionView.collectionViewLayout = layout
 
 ```
 
+Implement the provided `SpreadsheetLayoutDelegate`. The methods are straightforward. Simply pass `nil` wherever you do not want supplementary views to be displayed (leftmost, rightmost, topmost and bottommost).
+
+
 Reload Layout:
 ```swift
 //On Layout:
@@ -57,14 +63,24 @@ layout.resetLayoutCache()
 //Helper Method for collection view
 collectionView.reloadDataAndSpreadsheetLayout()
 ```
+
+So in short:
+1) Register the respective objects of type `UISupplementaryView` you want to use with the provided identifiers of the enum `ViewKindType`.
+2) Create a `UINib` object for each `UIDecrationView` (corner of the Spreadsheet) and pass it upon initialization of the Layout.
+3) Initialize the Layout with the provided convenience initializer and pass the delegate as well as the required decoration views.
+4) Implement the `SpreadsheetLayoutDelegate`.
+5) Set the content of your cells and the supplementary views in the data source methods of your collection view.
+6) Enjoy ;)
+
 ## Questions
 
 Please refer to the demo application or contact me directly.
 
 ## Author
 
-Wojtek Kordylewski, 
-indiControl GmbH
+Wojtek Kordylewski.
+ 
+indiControl GmbH owns the Copyright of the respective SwiftSpreadsheet.swift file.
 
 ## License
 
