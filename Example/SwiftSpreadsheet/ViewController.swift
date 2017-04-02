@@ -74,7 +74,11 @@ class ViewController: UIViewController {
         let rightSupplementaryViewNib = UINib(nibName: SupplementaryViewNames.right, bundle: nil)
         
         //Setup Layout
-        let layout = SpreadsheetLayout(delegate: self, topLeftDecorationViewNib: topLeftDecorationViewNib, topRightDecorationViewNib: topRightDecorationViewNib, bottomLeftDecorationViewNib: bottomLeftDecorationViewNib, bottomRightDecorationViewNib: bottomRightDecorationViewNib)
+        let layout = SpreadsheetLayout(delegate: self,
+                                       topLeftDecorationViewNib: topLeftDecorationViewNib,
+                                       topRightDecorationViewNib: topRightDecorationViewNib,
+                                       bottomLeftDecorationViewNib: bottomLeftDecorationViewNib,
+                                       bottomRightDecorationViewNib: bottomRightDecorationViewNib)
         
         //Default is true, set false here if you do not want some of these sides to remain sticky
         layout.stickyLeftRowHeader = true

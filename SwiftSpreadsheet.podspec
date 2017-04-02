@@ -24,7 +24,7 @@ Reference to the demo application. More information coming soon.
   s.homepage         = 'https://github.com/stuffrabbit/SwiftSpreadsheet'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Wojtek Kordylewski' => 'wk@mome-app.com' }
+  s.author           = { 'Wojtek Kordylewski' => 'stuffrabbit@yahoo.de' }
   s.source           = { :git => 'https://github.com/stuffrabbit/SwiftSpreadsheet.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
