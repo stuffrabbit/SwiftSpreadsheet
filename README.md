@@ -29,7 +29,7 @@ pod "SwiftSpreadsheet"
 A short introduction on how to get started:
 
 The rows of the spreadsheet represent a section in the collection view, with columns being the respective items.
-The the leftmost and the rightmost elements of the spreadsheet (`LeftRowHeadline`and `RightRowHeadline`), as well as the topmost and the bottommost elements (`TopColumnHeader`and `BottomColumnFooter`) are represented as `SupplementaryView`, which — if needed — have to be registered with the respective identifier of the provided enum `ViewKindType` (refer to the example code). 
+The leftmost and the rightmost elements of the spreadsheet (`LeftRowHeadline` and `RightRowHeadline`), as well as the topmost and the bottommost elements (`TopColumnHeader` and `BottomColumnFooter`) are represented as `UISupplementaryView`, which — if needed — have to be registered with the respective identifiers of the provided enum `ViewKindType` (refer to the example code). 
  
 The corners of the resulting spreadsheet are represented as `UIDecorationView` which can be passed as `UINib` upon initialization of the Layout.
 
@@ -66,8 +66,8 @@ collectionView.reloadDataAndSpreadsheetLayout()
 
 So in short:
 1) Register the respective objects of type `UISupplementaryView` you want to use with the provided identifiers of the enum `ViewKindType`.
-2) Create a `UINib` object for each `UIDecrationView` (corner of the Spreadsheet) and pass it upon initialization of the Layout.
-3) Initialize the Layout with the provided convenience initializer and pass the delegate as well as the required decoration views.
+2) Create a `UINib` object for each `UIDecrationView` (corner of the Spreadsheet) and pass it upon initialization of the layout.
+3) Initialize the layout with the provided convenience initializer and pass the delegate as well as the required decoration views.
 4) Implement the `SpreadsheetLayoutDelegate`.
 5) Set the content of your cells and the supplementary views in the data source methods of your collection view.
 6) Enjoy ;)
