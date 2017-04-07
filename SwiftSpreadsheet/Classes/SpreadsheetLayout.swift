@@ -104,11 +104,22 @@ public class SpreadsheetLayout: UICollectionViewLayout {
     }
     
     /// Convenience initialiser. Pass delegate and the respective Decoration Views if required.
-    public convenience init(delegate: SpreadsheetLayoutDelegate?, topLeftDecorationViewNib: UINib? = nil, topRightDecorationViewNib: UINib? = nil, bottomLeftDecorationViewNib: UINib? = nil, bottomRightDecorationViewNib: UINib? = nil) {
+    public convenience init(delegate: SpreadsheetLayoutDelegate?,
+                            topLeftDecorationViewNib: UINib? = nil,
+                            topRightDecorationViewNib: UINib? = nil,
+                            bottomLeftDecorationViewNib: UINib? = nil,
+                            bottomRightDecorationViewNib: UINib? = nil,
+                            topLeftDecorationViewClass: AnyClass? = nil,
+                            topRightDecorationViewClass: AnyClass? = nil,
+                            bottomLeftDecorationViewClass: AnyClass? = nil,
+                            bottomRightDecorationViewClass: AnyClass? = nil) {
         self.init()
         self.delegate = delegate
         
         if let topLeftDeco = topLeftDecorationViewNib {
+            self.decorationViewSet.topLeft = true
+            self.register(topLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationTopLeft.rawValue)
+        } else if let topLeftDeco = topLeftDecorationViewClass {
             self.decorationViewSet.topLeft = true
             self.register(topLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationTopLeft.rawValue)
         }
@@ -116,14 +127,23 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         if let topRightDeco = topRightDecorationViewNib {
             self.decorationViewSet.topRight = true
             self.register(topRightDeco, forDecorationViewOfKind: ViewKindType.DecorationTopRight.rawValue)
+        } else if let topRightDeco = topRightDecorationViewClass {
+            self.decorationViewSet.topRight = true
+            self.register(topRightDeco, forDecorationViewOfKind: ViewKindType.DecorationTopRight.rawValue)
         }
         
         if let bottomLeftDeco = bottomLeftDecorationViewNib {
             self.decorationViewSet.bottomLeft = true
             self.register(bottomLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomLeft.rawValue)
+        } else if let bottomLeftDeco = bottomLeftDecorationViewClass {
+            self.decorationViewSet.bottomLeft = true
+            self.register(bottomLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomLeft.rawValue)
         }
         
         if let bottomRightDeco = bottomRightDecorationViewNib {
+            self.decorationViewSet.bottomRight = true
+            self.register(bottomRightDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomRight.rawValue)
+        } else if let bottomRightDeco = bottomRightDecorationViewClass {
             self.decorationViewSet.bottomRight = true
             self.register(bottomRightDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomRight.rawValue)
         }
