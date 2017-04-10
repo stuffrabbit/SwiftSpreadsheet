@@ -116,37 +116,15 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         self.init()
         self.delegate = delegate
         
-        if let topLeftDeco = topLeftDecorationViewNib {
-            self.decorationViewSet.topLeft = true
-            self.register(topLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationTopLeft.rawValue)
-        } else if let topLeftDeco = topLeftDecorationViewClass {
-            self.decorationViewSet.topLeft = true
-            self.register(topLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationTopLeft.rawValue)
-        }
+        self.decorationViewSet.topLeft = (topLeftDecorationViewNib != nil || topLeftDecorationViewClass != nil)
+        self.decorationViewSet.topRight = (topRightDecorationViewNib != nil || topRightDecorationViewClass != nil)
+        self.decorationViewSet.bottomLeft = (bottomLeftDecorationViewNib != nil || bottomLeftDecorationViewClass != nil)
+        self.decorationViewSet.bottomRight = (bottomRightDecorationViewNib != nil || bottomRightDecorationViewClass != nil)
         
-        if let topRightDeco = topRightDecorationViewNib {
-            self.decorationViewSet.topRight = true
-            self.register(topRightDeco, forDecorationViewOfKind: ViewKindType.DecorationTopRight.rawValue)
-        } else if let topRightDeco = topRightDecorationViewClass {
-            self.decorationViewSet.topRight = true
-            self.register(topRightDeco, forDecorationViewOfKind: ViewKindType.DecorationTopRight.rawValue)
-        }
-        
-        if let bottomLeftDeco = bottomLeftDecorationViewNib {
-            self.decorationViewSet.bottomLeft = true
-            self.register(bottomLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomLeft.rawValue)
-        } else if let bottomLeftDeco = bottomLeftDecorationViewClass {
-            self.decorationViewSet.bottomLeft = true
-            self.register(bottomLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomLeft.rawValue)
-        }
-        
-        if let bottomRightDeco = bottomRightDecorationViewNib {
-            self.decorationViewSet.bottomRight = true
-            self.register(bottomRightDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomRight.rawValue)
-        } else if let bottomRightDeco = bottomRightDecorationViewClass {
-            self.decorationViewSet.bottomRight = true
-            self.register(bottomRightDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomRight.rawValue)
-        }
+        self.register(nib: topLeftDecorationViewNib, orViewClass: topLeftDecorationViewClass, forDecorationViewOfKind: ViewKindType.DecorationTopLeft.rawValue)
+        self.register(nib: topRightDecorationViewNib, orViewClass: topRightDecorationViewClass, forDecorationViewOfKind: ViewKindType.DecorationTopRight.rawValue)
+        self.register(nib: bottomLeftDecorationViewNib, orViewClass: bottomLeftDecorationViewClass, forDecorationViewOfKind: ViewKindType.DecorationBottomLeft.rawValue)
+        self.register(nib: bottomRightDecorationViewNib, orViewClass: bottomRightDecorationViewClass, forDecorationViewOfKind: ViewKindType.DecorationBottomRight.rawValue)
     }
     
     override public func prepare() {
@@ -524,5 +502,14 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         self.bottomLeftGapSpaceLayoutAttributes = nil
         self.bottomRightGapSpaceLayoutAttributes = nil
         self.cacheBuilt = false
+    }
+    
+    private func register(nib: UINib?, orViewClass viewClass: AnyClass?, forDecorationViewOfKind kind: String) {
+        if let nib = nib {
+            self.register(nib, forDecorationViewOfKind: kind)
+        }
+        else if let viewClass = viewClass {
+            self.register(viewClass, forDecorationViewOfKind: kind)
+        }
     }
 }
