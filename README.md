@@ -10,7 +10,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-Swift 3.0 or newer.
+Updated for Swift 4.0
+
 ## Installation
 
 SwiftSpreadsheet is available through [CocoaPods](http://cocoapods.org). To install
