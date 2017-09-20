@@ -30,7 +30,7 @@ pod "SwiftSpreadsheet"
 A short introduction on how to get started:
 
 The rows of the spreadsheet represent a section in the collection view, with columns being the respective items.
-The leftmost and the rightmost elements of the spreadsheet (`LeftRowHeadline` and `RightRowHeadline`), as well as the topmost and the bottommost elements (`TopColumnHeader` and `BottomColumnFooter`) are represented as `UISupplementaryView`, which — if needed — have to be registered with the respective identifiers of the provided enum `ViewKindType` (refer to the example code). 
+The leftmost and the rightmost elements of the spreadsheet (`leftRowHeadline` and `rightRowHeadline`), as well as the topmost and the bottommost elements (`topColumnHeader` and `bottomColumnFooter`) are represented as `UISupplementaryView`, which — if needed — have to be registered with the respective identifiers of the provided enum `ViewKindType` (refer to the example code).
  
 The corners of the resulting spreadsheet are represented as `UIDecorationView` which can be passed as `UINib` upon initialization of the Layout.
 
