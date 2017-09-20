@@ -17,7 +17,7 @@ public protocol SpreadsheetLayoutDelegate: class {
      
         - Returns: Height of the referenced section.
     */
-    func spreadsheetLayout(_ layout: SpreadsheetLayout, heightForRowsInSection section: Int) -> CGFloat
+    func spreadsheet(layout: SpreadsheetLayout, heightForRowsInSection section: Int) -> CGFloat
     
     /**
      Asks the delegate for the widths of the side rows in the layout.
@@ -26,7 +26,7 @@ public protocol SpreadsheetLayoutDelegate: class {
      
      - Returns: Tuple representing the left and the right row width of the spreadsheet layout. If you return `nil` for the tuple's element(s) the respective side row will not be drawn by the layout.
      */
-    func widthsOfSideRowsInSpreadsheetLayout(_ layout: SpreadsheetLayout) -> (left: CGFloat?, right: CGFloat?)
+    func widthsOfSideRowsInSpreadsheet(layout: SpreadsheetLayout) -> (left: CGFloat?, right: CGFloat?)
     
     /**
      Asks the delegate for the width of a column at a specific index.
@@ -36,7 +36,7 @@ public protocol SpreadsheetLayoutDelegate: class {
      
      - Returns: Width of the column.
      */
-    func spreadsheetLayout(_ layout: SpreadsheetLayout, widthForColumnAtIndex index: Int) -> CGFloat
+    func spreadsheet(layout: SpreadsheetLayout, widthForColumnAtIndex index: Int) -> CGFloat
     
     /**
      Asks the delegate for the heights of the header and footer of the layout.
@@ -45,7 +45,7 @@ public protocol SpreadsheetLayoutDelegate: class {
      
      - Returns: Tuple representing the header and the footer height of the spreadsheet layout. If you return `nil` for the tuple's element(s) the respective header/footer will not be drawn by the layout.
      */
-    func heightsOfHeaderAndFooterColumnsInSpreadsheetLayout(_ layout: SpreadsheetLayout) -> (headerHeight: CGFloat?, footerHeight: CGFloat?)
+    func heightsOfHeaderAndFooterColumnsInSpreadsheet(layout: SpreadsheetLayout) -> (headerHeight: CGFloat?, footerHeight: CGFloat?)
 }
 
 extension UICollectionView {
@@ -92,40 +92,40 @@ public class SpreadsheetLayout: UICollectionViewLayout {
 
     /// Available ViewKindTypes for Decoration- and Supplementary Views
     public enum ViewKindType: String {
-        case LeftRowHeadline = "LeftRowHeadlineKind"
-        case RightRowHeadline = "RightRowHeadlineKind"
-        case TopColumnHeader = "TopColumnHeaderKind"
-        case BottomColumnFooter = "BottomColumnFooterKind"
+        case leftRowHeadline = "LeftRowHeadlineKind"
+        case rightRowHeadline = "RightRowHeadlineKind"
+        case topColumnHeader = "TopColumnHeaderKind"
+        case bottomColumnFooter = "BottomColumnFooterKind"
         
-        case DecorationTopLeft = "DecorationTopLeftKind"
-        case DecorationTopRight = "DecorationTopRightKind"
-        case DecorationBottomLeft = "DecorationBottomLeftKind"
-        case DecorationBottomRight = "DecorationBottomRightKind"
+        case decorationTopLeft = "DecorationTopLeftKind"
+        case decorationTopRight = "DecorationTopRightKind"
+        case decorationBottomLeft = "DecorationBottomLeftKind"
+        case decorationBottomRight = "DecorationBottomRightKind"
     }
     
-    /// Convenience initialiser. Pass delegate and the respective Decoration Views if required.
+    /// Convenience initializer. Pass delegate and the respective Decoration Views if required.
     public convenience init(delegate: SpreadsheetLayoutDelegate?, topLeftDecorationViewNib: UINib? = nil, topRightDecorationViewNib: UINib? = nil, bottomLeftDecorationViewNib: UINib? = nil, bottomRightDecorationViewNib: UINib? = nil) {
         self.init()
         self.delegate = delegate
         
         if let topLeftDeco = topLeftDecorationViewNib {
             self.decorationViewSet.topLeft = true
-            self.register(topLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationTopLeft.rawValue)
+            self.register(topLeftDeco, forDecorationViewOfKind: ViewKindType.decorationTopLeft.rawValue)
         }
         
         if let topRightDeco = topRightDecorationViewNib {
             self.decorationViewSet.topRight = true
-            self.register(topRightDeco, forDecorationViewOfKind: ViewKindType.DecorationTopRight.rawValue)
+            self.register(topRightDeco, forDecorationViewOfKind: ViewKindType.decorationTopRight.rawValue)
         }
         
         if let bottomLeftDeco = bottomLeftDecorationViewNib {
             self.decorationViewSet.bottomLeft = true
-            self.register(bottomLeftDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomLeft.rawValue)
+            self.register(bottomLeftDeco, forDecorationViewOfKind: ViewKindType.decorationBottomLeft.rawValue)
         }
         
         if let bottomRightDeco = bottomRightDecorationViewNib {
             self.decorationViewSet.bottomRight = true
-            self.register(bottomRightDeco, forDecorationViewOfKind: ViewKindType.DecorationBottomRight.rawValue)
+            self.register(bottomRightDeco, forDecorationViewOfKind: ViewKindType.decorationBottomRight.rawValue)
         }
     }
     
@@ -135,8 +135,8 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         //BASIC Setup
         var maxItems = 0
         
-        let widthTuple = del.widthsOfSideRowsInSpreadsheetLayout(self)
-        let headerFooterTuple = del.heightsOfHeaderAndFooterColumnsInSpreadsheetLayout(self)
+        let widthTuple = del.widthsOfSideRowsInSpreadsheet(layout: self)
+        let headerFooterTuple = del.heightsOfHeaderAndFooterColumnsInSpreadsheet(layout: self)
         
         let maxTopColumnHeight = headerFooterTuple.headerHeight ?? 0
         
@@ -144,14 +144,14 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         var rowHeights = [CGFloat]()
         var currentRowYoffset = maxTopColumnHeight
         for section in 0 ..< cv.numberOfSections {
-            let rowHeight = del.spreadsheetLayout(self, heightForRowsInSection: section)
+            let rowHeight = del.spreadsheet(layout:self, heightForRowsInSection: section)
             rowHeights.append(rowHeight)
             
             let items = cv.numberOfItems(inSection: section)
             maxItems = max(maxItems, items)
             
             if let maxLeftRowWidth = widthTuple.left {
-                let leftRowAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: ViewKindType.LeftRowHeadline.rawValue, with: IndexPath(item: 0, section: section))
+                let leftRowAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: ViewKindType.leftRowHeadline.rawValue, with: IndexPath(item: 0, section: section))
                 leftRowAttributes.frame = CGRect(x: 0, y: currentRowYoffset, width: maxLeftRowWidth, height: rowHeight)
                 self.leftRowCache.append(leftRowAttributes)
             }
@@ -161,11 +161,11 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         var columnWidths = [CGFloat]()
         var currentColumnHeadlineXoffset = widthTuple.left ?? 0
         for item in 0 ..< maxItems {
-            let topColumnWidth = del.spreadsheetLayout(self, widthForColumnAtIndex: item)
+            let topColumnWidth = del.spreadsheet(layout: self, widthForColumnAtIndex: item)
             columnWidths.append(topColumnWidth)
             
             if maxTopColumnHeight > 0 {
-                let topColumnAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: ViewKindType.TopColumnHeader.rawValue, with: IndexPath(item: item, section: 0))
+                let topColumnAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: ViewKindType.topColumnHeader.rawValue, with: IndexPath(item: item, section: 0))
                 topColumnAttributes.frame = CGRect(x: currentColumnHeadlineXoffset, y: 0, width: topColumnWidth, height: maxTopColumnHeight)
                 self.topColumnCache.append(topColumnAttributes)
                 
@@ -196,13 +196,13 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         if numberOfSections > 0 {
             if let leftRowWidth = widthTuple.left {
                 if self.decorationViewSet.topLeft && maxTopColumnHeight > 0 {
-                    let topLeftAttributes = UICollectionViewLayoutAttributes(forDecorationViewOfKind: ViewKindType.DecorationTopLeft.rawValue, with: IndexPath(item: 0, section: 0))
+                    let topLeftAttributes = UICollectionViewLayoutAttributes(forDecorationViewOfKind: ViewKindType.decorationTopLeft.rawValue, with: IndexPath(item: 0, section: 0))
                     topLeftAttributes.frame = CGRect(x: 0, y: 0, width: leftRowWidth, height: maxTopColumnHeight)
                     self.topLeftGapSpaceLayoutAttributes = topLeftAttributes
                 }
                 
                 if let bottomColumnHeight = headerFooterTuple.footerHeight , self.decorationViewSet.bottomLeft {
-                    let bottomLeftAttributes = UICollectionViewLayoutAttributes(forDecorationViewOfKind: ViewKindType.DecorationBottomLeft.rawValue, with: IndexPath(item: 0, section: numberOfSections - 1))
+                    let bottomLeftAttributes = UICollectionViewLayoutAttributes(forDecorationViewOfKind: ViewKindType.decorationBottomLeft.rawValue, with: IndexPath(item: 0, section: numberOfSections - 1))
                     let yVal = self.stickyBottomColumnFooter ? min(cv.bounds.height - bottomColumnHeight, currentCellYoffset) : currentCellYoffset
 
                     bottomLeftAttributes.frame = CGRect(x: 0, y: yVal, width: leftRowWidth, height: bottomColumnHeight)
@@ -212,7 +212,7 @@ public class SpreadsheetLayout: UICollectionViewLayout {
             
             if let rightRowWidth = widthTuple.right {
                 if self.decorationViewSet.topRight && maxTopColumnHeight > 0 {
-                    let topRightAttributes = UICollectionViewLayoutAttributes(forDecorationViewOfKind: ViewKindType.DecorationTopRight.rawValue, with: IndexPath(item: cv.numberOfItems(inSection: 0) - 1, section: 0))
+                    let topRightAttributes = UICollectionViewLayoutAttributes(forDecorationViewOfKind: ViewKindType.decorationTopRight.rawValue, with: IndexPath(item: cv.numberOfItems(inSection: 0) - 1, section: 0))
                     if self.stickyRightRowHeader {
                         topRightAttributes.frame = CGRect(x: min(cv.bounds.width - rightRowWidth, currentCellXoffset), y: 0, width: rightRowWidth, height: maxTopColumnHeight)
                     }
@@ -223,7 +223,7 @@ public class SpreadsheetLayout: UICollectionViewLayout {
                 }
                 
                 if let bottomColumnHeight = headerFooterTuple.footerHeight , self.decorationViewSet.bottomRight {
-                    let bottomRightAttributes = UICollectionViewLayoutAttributes(forDecorationViewOfKind: ViewKindType.DecorationBottomRight.rawValue, with: IndexPath(item: 0, section: numberOfSections - 1))
+                    let bottomRightAttributes = UICollectionViewLayoutAttributes(forDecorationViewOfKind: ViewKindType.decorationBottomRight.rawValue, with: IndexPath(item: 0, section: numberOfSections - 1))
                     
                     let xVal = self.stickyRightRowHeader ? min(cv.bounds.width - rightRowWidth, currentCellXoffset) : currentCellXoffset
                     let yVal = self.stickyBottomColumnFooter ? min(cv.bounds.height - bottomColumnHeight, currentCellYoffset) : currentCellYoffset
@@ -235,7 +235,7 @@ public class SpreadsheetLayout: UICollectionViewLayout {
                 var currentRightRowOffsetY = maxTopColumnHeight
                 for section in 0 ..< cv.numberOfSections {
                     let sectionHeight = rowHeights[section]
-                    let rightRowAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: ViewKindType.RightRowHeadline.rawValue, with: IndexPath(item: cv.numberOfItems(inSection: 0) - 1, section: section))
+                    let rightRowAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: ViewKindType.rightRowHeadline.rawValue, with: IndexPath(item: cv.numberOfItems(inSection: 0) - 1, section: section))
                     if self.stickyRightRowHeader {
                         rightRowAttributes.frame = CGRect(x: min(cv.bounds.width - rightRowWidth, currentCellXoffset), y: currentRightRowOffsetY, width: rightRowWidth, height: sectionHeight)
                     }
@@ -253,7 +253,7 @@ public class SpreadsheetLayout: UICollectionViewLayout {
             if let bottomColumnHeight = headerFooterTuple.footerHeight {
                 for currentItem in 0 ..< columnWidths.count {
                     let rowWidth = columnWidths[currentItem]
-                    let bottomColumnAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: ViewKindType.BottomColumnFooter.rawValue, with: IndexPath(item: currentItem, section: numberOfSections - 1))
+                    let bottomColumnAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: ViewKindType.bottomColumnFooter.rawValue, with: IndexPath(item: currentItem, section: numberOfSections - 1))
                     
                     let yVal = self.stickyBottomColumnFooter ? max(0, min(cv.bounds.height - bottomColumnHeight, currentCellYoffset)) : currentCellYoffset
 
@@ -312,7 +312,7 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         }
         
         //RIGHT ROW
-        if let rightRowWidth = self.delegate?.widthsOfSideRowsInSpreadsheetLayout(self).right {
+        if let rightRowWidth = self.delegate?.widthsOfSideRowsInSpreadsheet(layout: self).right {
             if self.stickyRightRowHeader && cv.contentOffset.x <= self.contentWidth - cv.bounds.width {
                 for rowAttributes in self.rightRowCache {
                     rowAttributes.frame.origin.x = cv.contentOffset.x + cv.bounds.width - rightRowWidth
@@ -347,7 +347,7 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         
         //BOTTOM COLUMN
         
-        if let bottomColumnHeight = self.delegate?.heightsOfHeaderAndFooterColumnsInSpreadsheetLayout(self).footerHeight {
+        if let bottomColumnHeight = self.delegate?.heightsOfHeaderAndFooterColumnsInSpreadsheet(layout: self).footerHeight {
             if self.stickyBottomColumnFooter && cv.contentOffset.y <= self.contentHeight - cv.bounds.height {
                 for columnAttributes in self.bottomColumnCache {
                     columnAttributes.frame.origin.y = cv.contentOffset.y + cv.bounds.height - bottomColumnHeight
@@ -458,15 +458,15 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         guard let viewKind = ViewKindType(rawValue: elementKind) else { fatalError("Invalid View Kind for string: \(elementKind)") }
         
         switch viewKind {
-        case .LeftRowHeadline:
+        case .leftRowHeadline:
             return self.leftRowCache[indexPath.section]
-        case .RightRowHeadline:
+        case .rightRowHeadline:
             return self.rightRowCache[indexPath.section]
-        case .TopColumnHeader:
+        case .topColumnHeader:
             return self.topColumnCache[indexPath.item]
-        case .BottomColumnFooter:
+        case .bottomColumnFooter:
             return self.bottomColumnCache[indexPath.item]
-        case .DecorationTopLeft, .DecorationTopRight, .DecorationBottomLeft, .DecorationBottomRight:
+        case .decorationTopLeft, .decorationTopRight, .decorationBottomLeft, .decorationBottomRight:
             return nil
         }
     }
@@ -475,15 +475,15 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         guard let viewKind = ViewKindType(rawValue: elementKind) else { fatalError("Invalid View Kind for string: \(elementKind)") }
 
         switch viewKind {
-        case .DecorationTopLeft:
+        case .decorationTopLeft:
             return self.topLeftGapSpaceLayoutAttributes
-        case .DecorationTopRight:
+        case .decorationTopRight:
             return self.topRightGapSpaceLayoutAttributes
-        case .DecorationBottomLeft:
+        case .decorationBottomLeft:
             return self.bottomLeftGapSpaceLayoutAttributes
-        case .DecorationBottomRight:
+        case .decorationBottomRight:
             return self.bottomRightGapSpaceLayoutAttributes
-        case .LeftRowHeadline, .RightRowHeadline, .TopColumnHeader, .BottomColumnFooter:
+        case .leftRowHeadline, .rightRowHeadline, .topColumnHeader, .bottomColumnFooter:
             return nil
         }
     }

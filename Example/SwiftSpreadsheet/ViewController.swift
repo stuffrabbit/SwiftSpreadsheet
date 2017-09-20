@@ -90,10 +90,10 @@ class ViewController: UIViewController {
         
         
         //Register Supplementary-Viewnibs for the given ViewKindTypes
-        self.collectionView.register(leftSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.LeftRowHeadline.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
-        self.collectionView.register(rightSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.RightRowHeadline.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
-        self.collectionView.register(topSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.TopColumnHeader.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
-        self.collectionView.register(bottomSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.BottomColumnFooter.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
+        self.collectionView.register(leftSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.leftRowHeadline.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
+        self.collectionView.register(rightSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.rightRowHeadline.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
+        self.collectionView.register(topSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.topColumnHeader.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
+        self.collectionView.register(bottomSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.bottomColumnFooter.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
     }
 }
 
@@ -121,15 +121,15 @@ extension ViewController: UICollectionViewDataSource {
         
         let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: viewKind.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier, for: indexPath) as! SpreadsheetCollectionReusableView
         switch viewKind {
-        case .LeftRowHeadline:
+        case .leftRowHeadline:
             supplementaryView.infoLabel.text = "Section \(indexPath.section)"
-        case .RightRowHeadline:
+        case .rightRowHeadline:
             let value = self.dataArray[indexPath.section].reduce(0) { $0 + $1 }
             supplementaryView.infoLabel.text = self.numberFormatter.string(from: NSNumber(value: value))
-        case .TopColumnHeader:
+        case .topColumnHeader:
             supplementaryView.infoLabel.text = "Item \(indexPath.item)"
             supplementaryView.backgroundColor = indexPath.item % 2 == 1 ? self.lightGreyColor : UIColor.white
-        case .BottomColumnFooter:
+        case .bottomColumnFooter:
             let value = self.dataArray.map { $0[indexPath.item] }.reduce(0) { $0 + $1 }
             supplementaryView.infoLabel.text = self.numberFormatter.string(from: NSNumber(value: value))
             supplementaryView.backgroundColor = indexPath.item % 2 == 1 ? self.lightGreyColor : UIColor.white
@@ -145,19 +145,19 @@ extension ViewController: UICollectionViewDataSource {
 //MARK: - Spreadsheet Layout Delegate
 
 extension ViewController: SpreadsheetLayoutDelegate {
-    func spreadsheetLayout(_ layout: SpreadsheetLayout, heightForRowsInSection section: Int) -> CGFloat {
+    func spreadsheet(layout: SpreadsheetLayout, heightForRowsInSection section: Int) -> CGFloat {
         return 50
     }
     
-    func widthsOfSideRowsInSpreadsheetLayout(_ layout: SpreadsheetLayout) -> (left: CGFloat?, right: CGFloat?) {
+    func widthsOfSideRowsInSpreadsheet(layout: SpreadsheetLayout) -> (left: CGFloat?, right: CGFloat?) {
         return (120, 120)
     }
     
-    func spreadsheetLayout(_ layout: SpreadsheetLayout, widthForColumnAtIndex index: Int) -> CGFloat {
+    func spreadsheet(layout: SpreadsheetLayout, widthForColumnAtIndex index: Int) -> CGFloat {
         return 80
     }
     
-    func heightsOfHeaderAndFooterColumnsInSpreadsheetLayout(_ layout: SpreadsheetLayout) -> (headerHeight: CGFloat?, footerHeight: CGFloat?) {
+    func heightsOfHeaderAndFooterColumnsInSpreadsheet(layout: SpreadsheetLayout) -> (headerHeight: CGFloat?, footerHeight: CGFloat?) {
         return (70, 70)
     }
 }
