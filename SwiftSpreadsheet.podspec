@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftSpreadsheet'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'A spreadsheet CollectionViewLayout in Swift.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Reference to the demo application. More information coming soon.
+Reference to the demo application and the description on github. Additional information is available in the module's annotations/comments.
                        DESC
 
   s.homepage         = 'https://github.com/stuffrabbit/SwiftSpreadsheet'
