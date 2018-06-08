@@ -103,29 +103,44 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         case decorationBottomRight = "DecorationBottomRightKind"
     }
     
+    public enum DecorationViewType {
+        case asClass(AnyClass)
+        case asNib(UINib)
+    }
+    
     /// Convenience initializer. Pass delegate and the respective Decoration Views if required.
-    public convenience init(delegate: SpreadsheetLayoutDelegate?, topLeftDecorationViewNib: UINib? = nil, topRightDecorationViewNib: UINib? = nil, bottomLeftDecorationViewNib: UINib? = nil, bottomRightDecorationViewNib: UINib? = nil) {
+    public convenience init(delegate: SpreadsheetLayoutDelegate?, topLeftDecorationViewType: DecorationViewType? = nil, topRightDecorationViewType: DecorationViewType? = nil, bottomLeftDecorationViewType: DecorationViewType? = nil, bottomRightDecorationViewType: DecorationViewType? = nil) {
         self.init()
         self.delegate = delegate
         
-        if let topLeftDeco = topLeftDecorationViewNib {
+        if let topLeftDeco = topLeftDecorationViewType {
             self.decorationViewSet.topLeft = true
-            self.register(topLeftDeco, forDecorationViewOfKind: ViewKindType.decorationTopLeft.rawValue)
+            self.register(decorationViewType: topLeftDeco, decorationKind: ViewKindType.decorationTopLeft.rawValue)
         }
         
-        if let topRightDeco = topRightDecorationViewNib {
+        if let topRightDeco = topRightDecorationViewType {
             self.decorationViewSet.topRight = true
-            self.register(topRightDeco, forDecorationViewOfKind: ViewKindType.decorationTopRight.rawValue)
+            self.register(decorationViewType: topRightDeco, decorationKind: ViewKindType.decorationTopRight.rawValue)
         }
         
-        if let bottomLeftDeco = bottomLeftDecorationViewNib {
+        if let bottomLeftDeco = bottomLeftDecorationViewType {
             self.decorationViewSet.bottomLeft = true
-            self.register(bottomLeftDeco, forDecorationViewOfKind: ViewKindType.decorationBottomLeft.rawValue)
+            self.register(decorationViewType: bottomLeftDeco, decorationKind: ViewKindType.decorationBottomLeft.rawValue)
         }
         
-        if let bottomRightDeco = bottomRightDecorationViewNib {
+        if let bottomRightDeco = bottomRightDecorationViewType {
             self.decorationViewSet.bottomRight = true
-            self.register(bottomRightDeco, forDecorationViewOfKind: ViewKindType.decorationBottomRight.rawValue)
+            self.register(decorationViewType: bottomRightDeco, decorationKind: ViewKindType.decorationBottomRight.rawValue)
+            
+        }
+    }
+    
+    private func register(decorationViewType: DecorationViewType, decorationKind: String) {
+        switch decorationViewType {
+        case .asClass(let cl):
+            self.register(cl, forDecorationViewOfKind: decorationKind)
+        case .asNib(let nb):
+            self.register(nb, forDecorationViewOfKind: decorationKind)
         }
     }
     
