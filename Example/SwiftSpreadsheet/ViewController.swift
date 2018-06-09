@@ -75,10 +75,10 @@ class ViewController: UIViewController {
         
         //Setup Layout
         let layout = SpreadsheetLayout(delegate: self,
-                                       topLeftDecorationViewNib: topLeftDecorationViewNib,
-                                       topRightDecorationViewNib: topRightDecorationViewNib,
-                                       bottomLeftDecorationViewNib: bottomLeftDecorationViewNib,
-                                       bottomRightDecorationViewNib: bottomRightDecorationViewNib)
+                                       topLeftDecorationViewType: .asNib(topLeftDecorationViewNib),
+                                       topRightDecorationViewType: .asNib(topRightDecorationViewNib),
+                                       bottomLeftDecorationViewType: .asNib(bottomLeftDecorationViewNib),
+                                       bottomRightDecorationViewType: .asNib(bottomRightDecorationViewNib))
         
         //Default is true, set false here if you do not want some of these sides to remain sticky
         layout.stickyLeftRowHeader = true
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
         self.collectionView.collectionViewLayout = layout
         
         
-        //Register Supplementary-Viewnibs for the given ViewKindTypes
+        //Register Supplementary-View nibs for the given ViewKindTypes
         self.collectionView.register(leftSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.leftRowHeadline.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
         self.collectionView.register(rightSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.rightRowHeadline.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)
         self.collectionView.register(topSupplementaryViewNib, forSupplementaryViewOfKind: SpreadsheetLayout.ViewKindType.topColumnHeader.rawValue, withReuseIdentifier: self.defaultSupplementaryViewIdentifier)

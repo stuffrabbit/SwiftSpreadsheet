@@ -32,17 +32,17 @@ A short introduction on how to get started:
 The rows of the spreadsheet represent a section in the collection view, with columns being the respective items.
 The leftmost and the rightmost elements of the spreadsheet (`leftRowHeadline` and `rightRowHeadline`), as well as the topmost and the bottommost elements (`topColumnHeader` and `bottomColumnFooter`) are represented as `UISupplementaryView`, which — if needed — have to be registered with the respective identifiers of the provided enum `ViewKindType` (refer to the example code).
  
-The corners of the resulting spreadsheet are represented as `UIDecorationView` which can be passed as `UINib` upon initialization of the Layout.
+ The corners of the resulting spreadsheet are represented as `UIDecorationView` which can be passed as `UINib` or as `AnyClass` upon initialization of the layout. To allow more flexibilty you have to pass the given nib or class via the `DecorationViewType` enum. Its cases hold one of the respective types as associative value: `asNib(myNib)` or `asClass(myClass)`.
 
 A short example:
 
 ```swift
-//Register SupplementaryViews first, then initialize the layout with optional Nibs for the DecorationViews
+//Register SupplementaryViews first, then initialize the layout with optional Nibs/Classes for the DecorationViews
 let layout = SpreadsheetLayout(delegate: self,
-                               topLeftDecorationViewNib: topLeftDecorationViewNib,
-                               topRightDecorationViewNib: topRightDecorationViewNib,
-                               bottomLeftDecorationViewNib: bottomLeftDecorationViewNib,
-                               bottomRightDecorationViewNib: bottomRightDecorationViewNib)
+                               topLeftDecorationViewType: .asNib(topLeftDecorationViewNib),
+                               topRightDecorationViewType: .asNib(topRightDecorationViewNib),
+                               bottomLeftDecorationViewType: .asClass(bottomLeftDecorationViewClass),
+                               bottomRightDecorationViewType: .asClass(bottomRightDecorationViewClass))
 
 //Default is true, set false here if you do not want some of these sides to remain sticky
 layout.stickyLeftRowHeader = true

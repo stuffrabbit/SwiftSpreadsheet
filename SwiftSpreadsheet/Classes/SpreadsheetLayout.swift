@@ -103,12 +103,13 @@ public class SpreadsheetLayout: UICollectionViewLayout {
         case decorationBottomRight = "DecorationBottomRightKind"
     }
     
+    /// Associative values of this enum represent `AnyClass` or `UINib`
     public enum DecorationViewType {
         case asClass(AnyClass)
         case asNib(UINib)
     }
     
-    /// Convenience initializer. Pass delegate and the respective Decoration Views if required.
+    /// Convenience initializer. Pass delegate and the respective Decoration View types if required.
     public convenience init(delegate: SpreadsheetLayoutDelegate?, topLeftDecorationViewType: DecorationViewType? = nil, topRightDecorationViewType: DecorationViewType? = nil, bottomLeftDecorationViewType: DecorationViewType? = nil, bottomRightDecorationViewType: DecorationViewType? = nil) {
         self.init()
         self.delegate = delegate
