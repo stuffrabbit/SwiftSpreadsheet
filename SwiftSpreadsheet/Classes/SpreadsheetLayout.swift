@@ -50,7 +50,7 @@ public protocol SpreadsheetLayoutDelegate: class {
 
 extension UICollectionView {
     /// Reset the layout cache of your SpreadsheetLayout (if available) and reload the collection view.
-    func reloadDataAndSpreadsheetLayout() {
+    public func reloadDataAndSpreadsheetLayout() {
         if let spreadsheetLayout = self.collectionViewLayout as? SpreadsheetLayout {
             spreadsheetLayout.resetLayoutCache()
         }
