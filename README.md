@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/cocoapods/v/SwiftSpreadsheet.svg?style=flat)](http://cocoapods.org/pods/SwiftSpreadsheet)
 [![License](https://img.shields.io/cocoapods/l/SwiftSpreadsheet.svg?style=flat)](http://cocoapods.org/pods/SwiftSpreadsheet)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftSpreadsheet.svg?style=flat)](http://cocoapods.org/pods/SwiftSpreadsheet)
+<a href="https://github.com/apple/swift-package-manager"><img alt="Swift Package Manager compatible" src="https://img.shields.io/badge/SPM-%E2%9C%93-brightgreen.svg?style=flat"/></a>
 
 ## Example
 
