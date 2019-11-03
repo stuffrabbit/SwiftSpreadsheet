@@ -48,7 +48,7 @@ public protocol SpreadsheetLayoutDelegate: class {
     func heightsOfHeaderAndFooterColumnsInSpreadsheet(layout: SpreadsheetLayout) -> (headerHeight: CGFloat?, footerHeight: CGFloat?)
 }
 
-extension UICollectionView {
+public extension UICollectionView {
     /// Reset the layout cache of your SpreadsheetLayout (if available) and reload the collection view.
     func reloadDataAndSpreadsheetLayout() {
         if let spreadsheetLayout = self.collectionViewLayout as? SpreadsheetLayout {
